@@ -18,6 +18,9 @@ var algorithmHash = []func() hash.Hash{
 	Payload_OtpParameters_ALGORITHM_MD5:         md5.New,
 }
 
+// Deprecated: use Payload_OtpParameters_Algorithm
+type Payload_Algorithm = Payload_OtpParameters_Algorithm
+
 func (x Payload_OtpParameters_Algorithm) Hash() func() hash.Hash {
 	return algorithmHash[x]
 }
@@ -40,6 +43,9 @@ var digitCount = []int{
 	Payload_OtpParameters_DIGIT_COUNT_EIGHT:       8,
 }
 
+// Deprecated: use Payload_OtpParameters_DigitCount
+type Payload_DigitCount = Payload_OtpParameters_DigitCount
+
 func (x Payload_OtpParameters_DigitCount) Count() int {
 	return digitCount[x]
 }
@@ -49,6 +55,9 @@ var otpTypeFunc = []func(*Payload_OtpParameters) uint64{
 	Payload_OtpParameters_OTP_TYPE_HOTP:        hotp,
 	Payload_OtpParameters_OTP_TYPE_TOTP:        totp,
 }
+
+// Deprecated: use Payload_OtpParameters_OtpType
+type Payload_OtpType = Payload_OtpParameters_OtpType
 
 func (x Payload_OtpParameters_OtpType) Count(op *Payload_OtpParameters) uint64 {
 	return otpTypeFunc[x](op)
