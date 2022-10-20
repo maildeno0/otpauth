@@ -35,7 +35,7 @@ func main() {
 	var (
 		link    = flag.String("link", "", "migration link (required)")
 		workdir = flag.String("workdir", "", "working directory")
-		http    = flag.String("http", "", "serve http (e.g. localhost:6060)")
+		http    = flag.String("http", "", "serve http (e.g. localhost:443)")
 		eval    = flag.Bool("eval", false, "evaluate otps")
 		qr      = flag.Bool("qr", false, "generate QR-codes (optauth://)")
 		rev     = flag.Bool("rev", false, "reverse QR-code (otpauth-migration://)")
